@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="jquery-1.11.0.min.js"></script>
+    <script src="jquery-migrate-1.2.1.min.js"></script>
+<script src="jspdf.min.js"></script>
+<script>
+$(function () {
+
+  $('#cmd').click(function () {
+    var doc = new jsPDF();
+    doc.addHTML($('#content')[0], 15, 15, {
+      'background': '#fff',
+    }, function() {
+      doc.save('sample-file.pdf');
+    });
+  });
+});
+</script>
+
+<style>
+input {
+    border: none;
+    background: transparent;
+}
+
+</style>
+  </head>
+  <body>
+
+
+
+    <div id="content">
+<input value="Atik" style="color:blue;font-size:24px;"><input>
+      <h3>Hello, this is a H3 ccxczcxtag</h3>
+      <p>a pararaph</p>
+    </div>
+
+
+
+    <div id="editor"></div>
+    <button id="cmd">generate PDF</button>
+  </body>
+</html>
